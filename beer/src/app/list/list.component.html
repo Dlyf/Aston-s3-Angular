@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td>Nom</td>
+            <td>Prix</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let beer of beers'>
+            <td>{{ beer.name }}</td>
+            <td>{{ beer.price}}</td>
+            <td> <button [routerLink]="['/detail', beer.id]" class="btn btn-warning">Editer</button></td>
+            <td> <button ng-click="delete(index)" [routerLink]="['/detail', beer.id]" class="btn btn-danger">Supprimer</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

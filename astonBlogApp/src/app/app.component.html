@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="container">
+  <div class="articleUn">
+    {{ titlePrincipal }}
+    <br>
+    <br>
+    Article 1 : 
+
+    <br>
+    <button class="btn-warning btn1"></button>
+    <button class="btn-primary btn2"></button>
+  </div>
+  <hr>
+  <div class="artilcleDeux">
+    Article 2 :
+    <br>
+    <br>
+    {{ resume }}
+    <app-blog></app-blog>
+    <br>
+    <button class="btn-warning btn1"></button>
+    <button class="btn-primary btn2"></button>
+  </div>
+  <hr>
+  <div class="articleTrois">
+    Article 3 : 
+    <br>
+    <br>
+    {{ numberLike }}
+
+    <br>
+    <button class="btn-warning button1">+</button>
+    <button class="btn-primary button2">-</button>
+  <hr>
+</div>
+
+<nav>
+  <a routerLink="/list">List</a>
+  <a routerLink="/detail">Detail</a>
+</nav>
+<router-outlet></router-outlet>

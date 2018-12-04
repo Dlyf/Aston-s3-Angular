@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+        <table class="table table-striped">
+           <thead>
+              <tr>
+                <th>Index</th>
+                <th>Prénom</th>
+              </tr>
+            </thead>
+            <app-stagiaire *ngFor="let stagiaire of stagiaires; let i = index" 
+            [hidden]="stagiaire.actif != true"
+            [stagiaire]="stagiaire"
+            [i] = "i"
+            >
+            </app-stagiaire>
+        </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+{{ i }}
+<div [ngClass]="{'text-primary': stagiaire.age>18 && stagiaire.nom =='Lung', 'text-warning': stagiaire.age<18}"> {{ stagiaire.nom }}</div>
+<button class="btn-primary" (click)="lire()">Vieillir</button>
