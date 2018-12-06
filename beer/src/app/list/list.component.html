@@ -4,17 +4,19 @@
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
-            <td>Nom</td>
-            <td>Prix</td>
-            <td>Actions</td>
+            <td>Marque</td>
+            <td>Degrée</td>
+            <td>Name</td>
+            <td>Action</td>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor='let beer of beers'>
+            <td>{{ beer.brand }}</td>
+            <td>{{ beer.degree }}</td>
             <td>{{ beer.name }}</td>
-            <td>{{ beer.price}}</td>
-            <td> <button [routerLink]="['/detail', beer.id]" class="btn btn-warning">Editer</button></td>
-            <td> <button ng-click="delete(index)" [routerLink]="['/detail', beer.id]" class="btn btn-danger">Supprimer</button></td>
+            <td> <button [routerLink]="['/detail', beer.id]" class="btn btn-primary">Editer</button></td>
+            <td> <button (click)="delBeer()" class="btn btn-danger">Supprimer</button></td>
           </tr>
         </tbody>
       </table>

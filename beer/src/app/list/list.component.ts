@@ -12,20 +12,28 @@ export class ListComponent implements OnInit {
 
   // beers: Object;
   beers:Object[];
-  constructor(private http: HttpClient, private beerService : BeerService) { }
-
+  // constructor(private http: HttpClient, private beerService : BeerService) { }
+  constructor(private beerService : BeerService) { }
   ngOnInit() {
     // this.getBeers()
     // .subscribe(data=>this.beers=data)
-    this.beers = this.beerService.beers;
+    // this.beers = this.beerService.beers;
+    this.getBeers();
   }
-  
-  //.subscribe(data=>console.log(data));
-  getBeers() {
-    return this.http.get('https://api.punkapi.com/v2/beers')
+  getBeers():void {
+    this.beerService.getBeers()
+    .subscribe(data=> this.beers = Object.values(data));
   }
 
-  delBeer(Beer) {
-    console.log(Beer);
+
+  //.subscribe(data=>console.log(data));
+  // getBeers() {
+  //   return this.http.get('https://api.punkapi.com/v2/beers')
+  // }
+
+
+
+  delBeer(index) {
+    this.beers.splice(index,1);
   }
 }
